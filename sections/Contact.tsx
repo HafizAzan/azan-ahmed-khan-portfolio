@@ -10,14 +10,52 @@ import { SocialIcon } from "@/components/ui/SocialIcon";
 import { Textarea } from "@/components/ui/Textarea";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
+type FormStatus = "idle" | "loading" | "sent" | "error";
+
 export function Contact() {
   const formRef = useFadeUp<HTMLFormElement>();
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatus("sent");
-    event.currentTarget.reset();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = (await response.json()) as {
+        ok: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !data.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong.");
+        return;
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Please try again.");
+    }
   };
 
   return (
@@ -89,14 +127,24 @@ export function Contact() {
               />
             </div>
 
-            <Button type="submit" className="mt-6 w-full" size="lg">
-              Send Message
+            <Button
+              type="submit"
+              className="mt-6 w-full"
+              size="lg"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "Sending..." : "Send Message"}
             </Button>
 
             {status === "sent" ? (
               <p className="mt-4 text-sm text-accent" role="status">
-                Thanks — your message is ready. Connect this form to your email
-                or API next.
+                Thanks — your message was sent. I will get back to you soon.
+              </p>
+            ) : null}
+
+            {status === "error" ? (
+              <p className="mt-4 text-sm text-red-400" role="alert">
+                {errorMessage}
               </p>
             ) : null}
           </form>
