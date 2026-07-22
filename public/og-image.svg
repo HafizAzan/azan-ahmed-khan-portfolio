@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B0B0B"/>
+  <circle cx="980" cy="140" r="220" fill="#7C3AED" fill-opacity="0.22"/>
+
+  <g transform="translate(80, 210)">
+    <rect width="88" height="88" rx="20" fill="#111111" stroke="#27272A"/>
+    <path d="M44 16L66 72H56.5L51.2 58H36.8L31.5 72H22L44 16Z" fill="#FFFFFF"/>
+    <path d="M38.6 52H49.4L44 38L38.6 52Z" fill="#111111"/>
+    <circle cx="63" cy="68" r="5" fill="#7C3AED"/>
+  </g>
+
+  <text x="200" y="268" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="56" font-weight="700">Azan Ahmed Khan</text>
+  <text x="200" y="320" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="28">Full Stack Developer</text>
+</svg>
