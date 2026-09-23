@@ -66,15 +66,11 @@ export function Hero() {
   }, [reducedMotion]);
 
   return (
-    <section
-      ref={sectionRef}
-      id="top"
-      className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-16"
-    >
+    <section ref={sectionRef} id="top" className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-16">
       <div
         ref={glowRef}
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-3xl"
+        className="pointer-events-none fixed top-0 left-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-3xl"
       />
 
       <div
@@ -89,10 +85,7 @@ export function Hero() {
       />
 
       <Container className="relative z-10">
-        <p
-          data-hero
-          className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-accent opacity-0"
-        >
+        <p data-hero className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-accent opacity-0">
           {SITE.title}
         </p>
 
@@ -103,12 +96,8 @@ export function Hero() {
           {SITE.name}
         </h1>
 
-        <p
-          data-hero
-          className="mt-6 max-w-xl text-lg leading-relaxed text-secondary opacity-0 md:text-xl"
-        >
-          I design and build clean, fast web products that feel premium and stay
-          easy to use.
+        <p data-hero className="mt-6 max-w-xl text-lg leading-relaxed text-secondary opacity-0 md:text-xl">
+          I design and build clean, fast web products that feel premium and stay easy to use.
         </p>
 
         <div data-hero className="mt-10 flex flex-wrap items-center gap-4 opacity-0">

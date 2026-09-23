@@ -10,16 +10,15 @@ import { getGsap } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import type { Project } from "@/types";
 
+const PROJECT_PLACEHOLDER = "/images/project-placeholder.svg";
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const imageSources = (Array.isArray(project.image) ? project.image : [project.image]).filter(Boolean);
+  const images = imageSources.length > 0 ? imageSources : [PROJECT_PLACEHOLDER];
+
   return (
-    <article
-      data-project-card
-      className="grid gap-8 border-t border-border py-12 lg:grid-cols-2 lg:gap-12 lg:py-16"
-    >
-      <div
-        data-project-image
-        className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-zinc-900 to-black"
-      >
+    <article data-project-card className="grid gap-8 border-t border-border py-12 lg:grid-cols-2 lg:gap-12 lg:py-16">
+      <div data-project-image className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-zinc-900 to-black">
         <div
           className={`absolute inset-0 ${
             index % 3 === 0
@@ -29,20 +28,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 : "bg-[radial-gradient(circle_at_40%_80%,rgba(124,58,237,0.25),transparent_50%)]"
           }`}
         />
+
+        <div className="relative z-[1] flex flex-col gap-4 p-4 md:p-6">
+          {images.map((imgSrc, idx) => (
+            <img
+              key={`${imgSrc}-${idx}`}
+              src={imgSrc}
+              alt={`${project.title} screenshot ${idx + 1}`}
+              className="aspect-[16/10] w-full rounded-2xl object-cover"
+              onError={(event) => {
+                event.currentTarget.onerror = null;
+                event.currentTarget.src = PROJECT_PLACEHOLDER;
+              }}
+            />
+          ))}
+        </div>
+
         <div className="absolute inset-0 flex items-end p-6 md:p-8">
-          <p className="font-display text-2xl font-semibold text-white md:text-3xl">
-            {project.title}
-          </p>
+          <p className="font-display text-2xl font-semibold text-white md:text-3xl">{project.title}</p>
         </div>
       </div>
 
       <div className="flex flex-col justify-center">
-        <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
-          {project.title}
-        </h3>
-        <p className="mt-4 text-base leading-relaxed text-secondary md:text-lg">
-          {project.description}
-        </p>
+        <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">{project.title}</h3>
+        <p className="mt-4 text-base leading-relaxed text-secondary md:text-lg">{project.description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
@@ -139,12 +148,7 @@ export function Projects() {
   }, [reducedMotion]);
 
   return (
-    <section
-      ref={sectionRef}
-      id="projects"
-      className="scroll-mt-24 py-24 md:py-32"
-      aria-labelledby="projects-heading"
-    >
+    <section ref={sectionRef} id="projects" className="scroll-mt-24 py-24 md:py-32" aria-labelledby="projects-heading">
       <Container>
         <SectionHeading
           eyebrow="Featured Projects"

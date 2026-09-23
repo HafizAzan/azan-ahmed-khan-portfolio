@@ -27,11 +27,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border/80 bg-background/80 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"}`}
     >
       <Container className="flex h-16 items-center justify-between md:h-20">
         <a href="#top" aria-label={`${SITE.name} home`} className="shrink-0">
@@ -40,11 +36,7 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-secondary transition-colors hover:text-white"
-            >
+            <a key={link.href} href={link.href} className="text-sm text-secondary transition-colors hover:text-white">
               {link.label}
             </a>
           ))}
@@ -62,12 +54,8 @@ export function Navbar() {
         >
           <span className="sr-only">Menu</span>
           <span className="flex w-4 flex-col gap-1.5">
-            <span
-              className={`h-px w-full bg-white transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
-            />
-            <span
-              className={`h-px w-full bg-white transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
-            />
+            <span className={`h-px w-full bg-white transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-full bg-white transition-transform ${open ? "translate-y-[-3.5px] -rotate-45" : ""}`} />
           </span>
         </button>
       </Container>
@@ -76,12 +64,7 @@ export function Navbar() {
         <div className="border-t border-border bg-background md:hidden">
           <Container className="flex flex-col gap-4 py-6">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-lg text-white"
-                onClick={() => setOpen(false)}
-              >
+              <a key={link.href} href={link.href} className="text-lg text-white" onClick={() => setOpen(false)}>
                 {link.label}
               </a>
             ))}

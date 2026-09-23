@@ -14,9 +14,7 @@ type SmoothScrollProviderProps = {
 };
 
 function getHashFromClick(event: MouseEvent) {
-  const link = (event.target as HTMLElement | null)?.closest(
-    "a[href^='#']",
-  ) as HTMLAnchorElement | null;
+  const link = (event.target as HTMLElement | null)?.closest("a[href^='#']") as HTMLAnchorElement | null;
 
   if (!link) return null;
 
@@ -31,6 +29,10 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
     const onClick = (event: MouseEvent) => {
       const hash = getHashFromClick(event);
       if (!hash) return;
@@ -47,8 +49,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       } else {
         const el = document.querySelector(hash);
         if (!el) return;
-        const top =
-          el.getBoundingClientRect().top + window.scrollY + NAV_OFFSET;
+        const top = el.getBoundingClientRect().top + window.scrollY + NAV_OFFSET;
         window.scrollTo({
           top,
           behavior: reducedMotion ? "auto" : "smooth",
@@ -81,6 +82,7 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
 
     return () => {
       document.removeEventListener("click", onClick, true);
+      window.history.scrollRestoration = previousScrollRestoration;
       setLenis(null);
       delete (window as Window & { __lenis?: Lenis }).__lenis;
       lenis.destroy();

@@ -3,19 +3,18 @@
 import { TECH_STACK } from "@/constants/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import type { TechItem } from "@/types";
 
-function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
-  const items = [...TECH_STACK, ...TECH_STACK];
+function MarqueeRow({ items, reverse = false }: { items: TechItem[]; reverse?: boolean }) {
+  const marqueeItems = [...items, ...items];
 
   return (
     <div className="relative overflow-hidden py-2">
-      <div
-        className={`flex w-max gap-4 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
-      >
-        {items.map((tech, index) => (
+      <div className={`flex w-max gap-4 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+        {marqueeItems.map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}
-            className="group flex min-w-[160px] items-center justify-center rounded-full border border-border bg-white/[0.03] px-6 py-3 text-sm text-secondary transition-all duration-300 hover:scale-105 hover:border-accent/60 hover:text-white hover:shadow-[0_0_24px_rgba(124,58,237,0.25)] hover:rotate-1"
+            className="capitalize group flex min-w-40 items-center justify-center rounded-full border border-border bg-white/[0.03] px-6 py-3 text-sm text-secondary transition-all duration-300 hover:scale-105 hover:border-accent/60 hover:text-white hover:shadow-[0_0_24px_rgba(124,58,237,0.25)] hover:rotate-1"
           >
             {tech.name}
           </div>
@@ -27,11 +26,7 @@ function MarqueeRow({ reverse = false }: { reverse?: boolean }) {
 
 export function TechStack() {
   return (
-    <section
-      id="tech"
-      className="scroll-mt-24 py-24 md:py-32"
-      aria-labelledby="tech-heading"
-    >
+    <section id="tech" className="scroll-mt-24 py-24 md:py-32" aria-labelledby="tech-heading">
       <Container>
         <SectionHeading
           eyebrow="Tech Stack"
@@ -41,14 +36,14 @@ export function TechStack() {
       </Container>
 
       <div className="mt-12 space-y-4" aria-hidden="true">
-        <MarqueeRow />
-        <MarqueeRow reverse />
+        <MarqueeRow items={TECH_STACK.line1} reverse />
+        <MarqueeRow items={TECH_STACK.line2} />
       </div>
 
       <Container className="sr-only">
         <h2 id="tech-heading">Tech Stack</h2>
         <ul>
-          {TECH_STACK.map((tech) => (
+          {[...TECH_STACK.line1, ...TECH_STACK.line2].map((tech) => (
             <li key={tech.name}>{tech.name}</li>
           ))}
         </ul>

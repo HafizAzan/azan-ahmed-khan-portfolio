@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { getGsap } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import myPic from "@/public/azan.png";
 
 export function About() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -64,19 +65,15 @@ export function About() {
   }, [reducedMotion]);
 
   return (
-    <section
-      ref={sectionRef}
-      id="about"
-      className="scroll-mt-24 py-24 md:py-32"
-      aria-labelledby="about-heading"
-    >
+    <section ref={sectionRef} id="about" className="scroll-mt-24 py-24 md:py-32" aria-labelledby="about-heading">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div
             data-about-image
-            className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-zinc-900 via-zinc-950 to-black"
+            className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-linear-to-br from-zinc-900 via-zinc-950 to-black"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(124,58,237,0.35),transparent_55%)]" />
+            <img src={myPic.src} alt="Azan Ahmed Khan" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 flex items-end p-8">
               <p className="font-display text-3xl font-semibold text-white/90">
                 Azan
@@ -87,22 +84,16 @@ export function About() {
           </div>
 
           <div>
-            <SectionHeading
-              eyebrow="About"
-              title="A developer who cares about craft and clarity"
-            />
+            <SectionHeading eyebrow="About" title="A developer who cares about craft and clarity" />
             <div className="mt-8 space-y-5 text-base leading-relaxed text-secondary md:text-lg">
               <p data-about-line id="about-heading">
-                I build full stack products with a strong focus on clean UI,
-                solid architecture, and smooth user experience.
+                I build full stack products with a strong focus on clean UI, solid architecture, and smooth user experience.
               </p>
               <p data-about-line>
-                My work sits between design and engineering — so interfaces feel
-                intentional, and the code behind them stays maintainable.
+                My work sits between design and engineering — so interfaces feel intentional, and the code behind them stays maintainable.
               </p>
               <p data-about-line>
-                Whether it is a marketing site or a complex app, I aim for work
-                that looks premium and performs well in the real world.
+                Whether it is a marketing site or a complex app, I aim for work that looks premium and performs well in the real world.
               </p>
             </div>
           </div>
