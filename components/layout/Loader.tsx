@@ -46,7 +46,7 @@ export function Loader({ onComplete }: LoaderProps) {
   return (
     <div
       ref={rootRef}
-      className="fixed inset-0 z-[90] flex items-center justify-center bg-background"
+      className="fixed inset-0 z-90 flex items-center justify-center bg-background"
       role="status"
       aria-live="polite"
       aria-label="Loading portfolio"

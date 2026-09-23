@@ -18,7 +18,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   return (
     <article data-project-card className="grid gap-8 border-t border-border py-12 lg:grid-cols-2 lg:gap-12 lg:py-16">
-      <div data-project-image className="relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-zinc-900 to-black">
+      <div data-project-image className="relative overflow-hidden rounded-3xl border border-border bg-linear-to-br from-zinc-900 to-black">
         <div
           className={`absolute inset-0 ${
             index % 3 === 0
@@ -29,13 +29,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           }`}
         />
 
-        <div className="relative z-[1] flex flex-col gap-4 p-4 md:p-6">
+        <div className="relative z-1 flex flex-col gap-4 p-4 md:p-6">
           {images.map((imgSrc, idx) => (
             <img
               key={`${imgSrc}-${idx}`}
               src={imgSrc}
               alt={`${project.title} screenshot ${idx + 1}`}
-              className="aspect-[16/10] w-full rounded-2xl object-cover"
+              className="aspect-16/10 w-full rounded-2xl object-cover"
               onError={(event) => {
                 event.currentTarget.onerror = null;
                 event.currentTarget.src = PROJECT_PLACEHOLDER;
