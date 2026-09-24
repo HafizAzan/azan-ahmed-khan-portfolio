@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { FiArrowDown } from "react-icons/fi";
+import { FiArrowDown, FiDownload } from "react-icons/fi";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { SITE } from "@/constants/site";
@@ -106,8 +106,17 @@ export function Hero() {
               View Work
             </ButtonLink>
           </div>
-          <ButtonLink href="#contact" variant="secondary" size="lg">
-            Contact Me
+
+          <ButtonLink
+            href="/azan-ahmed-khan-24-sep-2026.pdf"
+            variant="secondary"
+            size="lg"
+            download="Azan-Ahmed-Khan-Resume.pdf"
+            data-cursor-label="Download"
+            aria-label="Download Azan Ahmed Khan resume"
+          >
+            <FiDownload aria-hidden="true" />
+            Resume
           </ButtonLink>
         </div>
 

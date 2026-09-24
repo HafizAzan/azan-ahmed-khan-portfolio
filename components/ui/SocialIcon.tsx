@@ -1,15 +1,13 @@
-import {
-  FiGithub,
-  FiLinkedin,
-  FiMail,
-  FiTwitter,
-} from "react-icons/fi";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import type { SocialLink } from "@/types";
 
 const iconMap = {
   github: FiGithub,
   linkedin: FiLinkedin,
-  twitter: FiTwitter,
+  instagram: FaInstagram,
+  facebook: FaFacebookF,
+  whatsapp: FaWhatsapp,
   email: FiMail,
 } as const;
 

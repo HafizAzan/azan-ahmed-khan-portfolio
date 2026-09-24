@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FiDownload } from "react-icons/fi";
 import { NAV_LINKS } from "@/constants/content";
 import { SITE } from "@/constants/site";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -70,6 +71,17 @@ export function Navbar() {
             ))}
             <ButtonLink href="#contact" onClick={() => setOpen(false)}>
               Hire Me
+            </ButtonLink>
+            <ButtonLink
+              href="/azan-ahmed-khan-24-sep-2026.pdf"
+              variant="secondary"
+              download="Azan-Ahmed-Khan-Resume.pdf"
+              data-cursor-label="Download"
+              aria-label="Download Azan Ahmed Khan resume"
+              onClick={() => setOpen(false)}
+            >
+              <FiDownload aria-hidden="true" />
+              Download Resume
             </ButtonLink>
           </Container>
         </div>

@@ -6,7 +6,7 @@ export type NavLink = {
 export type SocialLink = {
   label: string;
   href: string;
-  icon: "github" | "linkedin" | "twitter" | "email";
+  icon: "github" | "linkedin" | "instagram" | "facebook" | "whatsapp" | "email";
 };
 
 export type TechItem = {

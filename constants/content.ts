@@ -9,9 +9,11 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
-  { label: "Twitter", href: "https://twitter.com", icon: "twitter" },
+  { label: "GitHub", href: "https://github.com/HafizAzan", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/azan-ahmed-khan-6126ba3b7/", icon: "linkedin" },
+  { label: "Instagram", href: "https://www.instagram.com/azan_khan.26?stkn=NG1od2JzeGF2dTIz", icon: "instagram" },
+  { label: "Facebook", href: "https://www.facebook.com/share/1BJnrp5Qa2/", icon: "facebook" },
+  { label: "WhatsApp", href: "https://wa.me/923161122692", icon: "whatsapp" },
   { label: "Email", href: "mailto:azanahmedkhan.dev@gmail.com", icon: "email" },
 ];
 
@@ -213,7 +215,7 @@ export const PROJECTS: Project[] = [
       "Nodemailer",
       "PDFKit",
     ],
-    liveUrl: "https://github.com/HafizAzan/LMS",
+    liveUrl: "https://learning-management-system-kohl-eight.vercel.app",
     githubUrl: "https://github.com/HafizAzan/LMS",
     challenges:
       "The platform needed to support different student and instructor workflows while keeping course progress, quizzes, paid enrollments, certificates, media uploads, and authentication reliable across the learning journey.",
@@ -246,7 +248,7 @@ export const PROJECTS: Project[] = [
       "Ollama",
       "OpenAI API",
     ],
-    liveUrl: "https://github.com/HafizAzan/JPW",
+    liveUrl: "https://job-portal-web-smoky.vercel.app/",
     githubUrl: "https://github.com/HafizAzan/JPW",
     challenges:
       "The platform needed to serve job seekers, employers, and admins with separate permissions while keeping job listings, applications, resumes, OTP authentication, and recruitment workflows secure and easy to manage.",
@@ -275,8 +277,8 @@ export const PROJECTS: Project[] = [
       "i18next",
       "Node.js",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    liveUrl: "https://whatsapp-webhook-amber-eta.vercel.app/login",
+    githubUrl: "https://github.com/HafizAzan/whatsapp-webhook",
     challenges:
       "The dashboard needed to keep WhatsApp sessions and message state reliable while handling QR authentication, webhook delivery, media, scheduled jobs, and real-time chat events in a serverless deployment environment.",
     solution:
@@ -284,32 +286,159 @@ export const PROJECTS: Project[] = [
     result:
       "Delivered a centralized WhatsApp operations dashboard with multi-account switching, chats, click-to-chat links, auto-replies, broadcasts, scheduled messaging, analytics, webhook automation, media tools, and localized UI support.",
   },
+  {
+    id: "project-8",
+    title: "Pixel Pulse",
+    description:
+      "A conversion-focused LED display rental platform for NYC, New Jersey, and Connecticut, helping event organizers explore screen options, plan productions, and request quotes.",
+    image: ["/images/px-1.png", "/images/px-2.png"],
+    technologies: [
+      "Vue 3",
+      "Vite",
+      "JavaScript",
+      "Vue Router",
+      "GSAP",
+      "Swiper",
+      "Tailwind CSS",
+      "Unhead SEO",
+      "JSON-LD",
+      "EmailJS",
+      "Vue Toastification",
+    ],
+    liveUrl: "https://www.pixel-pulse.net/",
+    githubUrl: "https://github.com/codenapps/pixel-pulse",
+    challenges:
+      "The site needed to turn a complex event-production service into a clear buying journey while serving multiple regions, screen sizes, event types, and high-intent SEO queries.",
+    solution:
+      "Built a Vue 3 and Vite single-page experience with reusable service, event, gallery, FAQ, specification, and quote components, regional routes, animated interactions, blog content routes, responsive layouts, structured metadata, and form submission feedback.",
+    result:
+      "Delivered a polished lead-generation site for indoor and outdoor LED wall rentals, with dedicated New Jersey and Connecticut landing pages, screen-size guidance, event use cases, installation support, creative services, FAQs, and a 20-plus article content hub.",
+  },
+  {
+    id: "project-9",
+    title: "Lumi",
+    description:
+      "A Gmail productivity SaaS that helps professionals track replies, schedule follow-ups, snooze conversations, and pause their inbox without losing important messages.",
+    image: ["/images/lumi-1.png", "/images/lumi-2.png"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Firebase Authentication",
+      "Firebase Admin",
+      "Google APIs",
+      "Stripe",
+      "Recharts",
+      "Next.js API Routes",
+    ],
+    liveUrl: "https://inboxlumi.com/",
+    githubUrl: "https://github.com/codenapps/lumi",
+    challenges:
+      "The product needed to make time-based email workflows feel effortless while coordinating authentication, reminders, subscriptions, inbox controls, responsive Gmail-focused UX, and separate customer and admin operations.",
+    solution:
+      "Built a Next.js App Router application with Firebase authentication, Redux Toolkit data services, Google API integrations, reminder and auto-response flows, Stripe checkout and subscription management, protected user and admin routes, responsive dashboards, and shared UI components.",
+    result:
+      "Delivered a complete Gmail productivity experience with reply tracking, follow-up reminders, snooze, pause inbox, auto-reply, automatic resume, onboarding, 14-day trials, monthly and annual plans, support pages, and customer/admin dashboards.",
+  },
+  {
+    id: "project-10",
+    title: "Headland",
+    description:
+      "A multi-stage video membership platform for structured content, premium assets, live sessions, community learning, and progress-driven user experiences.",
+    image: ["/images/h-1.png", "/images/h-2.png"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Socket.IO",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL",
+      "AWS S3",
+      "Stripe",
+      "BullMQ",
+      "Redis",
+    ],
+    liveUrl: "https://multi-stage-video-platform-frontend-delta.vercel.app",
+    githubUrl: "https://github.com/codenapps/multi-stage-video-platform-frontend",
+    challenges:
+      "The platform needed to organize gated video content into progressive stages while coordinating memberships, media delivery, user progress, live sessions, community moderation, realtime chat, and admin workflows.",
+    solution:
+      "Built a React and Vite frontend with protected route guards, staged navigation, Redux data services, HLS playback, responsive dashboards, community and chat interfaces, and live-session views, backed by an Express and Prisma API with PostgreSQL, S3 storage, Stripe, Socket.IO, scheduled jobs, and role-based administration.",
+    result:
+      "Delivered a full learning and membership ecosystem with stage-based video journeys, free library content, premium assets, progress tracking, favorites, recordings, live sessions, community posts, direct and moderator chat, subscriptions, public sharing, and admin analytics and content management.",
+  },
+  {
+    id: "project-11",
+    title: "Boxed AI",
+    description:
+      "A secure AI knowledge-workspace foundation where users organize projects into Boxes and prepare files, chats, retrieval, and agent workflows in one authenticated product experience.",
+    image: ["/images/b-1.png", "/images/b-2.png"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "assistant-ui",
+      "Zustand",
+      "FastAPI",
+      "Python",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "pgvector",
+      "Keycloak SSO",
+      "Redis",
+      "MinIO",
+      "DeepAgents",
+      "LangChain",
+    ],
+    liveUrl: "https://dev.boxed-ai.com",
+    githubUrl: "https://github.com/codenapps/boxed-ai-web-3.0/tree/dev",
+    challenges:
+      "The product needed a secure base for AI-assisted knowledge work while keeping access tokens server-side, supporting password and Google/Microsoft SSO, enforcing project ownership, and leaving a clean path for file ingestion, retrieval, citations, and agent workflows.",
+    solution:
+      "Built a Next.js App Router client with protected server-rendered routes, httpOnly session cookies, typed English/Italian i18n, service-layer API access, and Project Box flows, backed by a FastAPI API with JWT and Keycloak integration, SQLAlchemy migrations, PostgreSQL/pgvector infrastructure, Redis, MinIO, Pub/Sub, DeepAgents, and LangChain model integrations.",
+    result:
+      "Delivered the secure foundation of Boxed AI with signup, login, logout, token refresh and revocation, Google and Microsoft SSO, API health monitoring, and owned Project Box CRUD, ready to expand into Knowledge Box uploads, chat with retrieval and citations, and Work Box workflows.",
+  },
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
     id: "exp-1",
-    role: "Senior Full Stack Developer",
-    company: "PixelForge Studio",
-    period: "2023 — Present",
-    description: "Lead frontend architecture and ship client products with strong UX, performance, and maintainable code.",
-    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    role: "Next.js Intern Developer",
+    company: "Innoversol",
+    period: "5 May 2025 — 5 Aug 2025",
+    description: "Contributed to production web experiences while building practical experience with modern React and Next.js development.",
+    technologies: ["React", "Redux", "Next.js", "Vue.js", "RTK Query"],
   },
   {
     id: "exp-2",
-    role: "Full Stack Developer",
-    company: "BrightLabs",
-    period: "2021 — 2023",
-    description: "Built and improved SaaS features end to end, from API design to polished UI and deployment.",
-    technologies: ["React", "Express", "MongoDB", "AWS"],
-  },
-  {
-    id: "exp-3",
-    role: "Frontend Developer",
-    company: "Craft Digital",
-    period: "2019 — 2021",
-    description: "Created responsive marketing sites and web apps with clean UI systems and smooth interactions.",
-    technologies: ["React", "JavaScript", "SCSS", "WordPress"],
+    role: "Junior Fullstack Engineer",
+    company: "Innoversol",
+    period: "6 Aug 2025 — Present",
+    description: "Build and maintain full-stack products across frontend, backend, databases, containers, and cloud deployment workflows.",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "React",
+      "React Native",
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma ORM",
+      "TypeORM",
+      "Docker",
+      "CI/CD",
+      "AWS",
+    ],
   },
 ];
 
