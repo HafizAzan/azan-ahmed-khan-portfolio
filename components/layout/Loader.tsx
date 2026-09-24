@@ -41,6 +41,37 @@ export function Loader({ onComplete }: LoaderProps) {
     };
   }, [onComplete]);
 
+  useEffect(() => {
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyTouchAction = document.body.style.touchAction;
+    const previousBodyOverscroll = document.body.style.overscrollBehavior;
+    const previousHtmlHeight = document.documentElement.style.height;
+
+    if (!done) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+      document.body.style.overscrollBehavior = "none";
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.height = "100%";
+      window.scrollTo({ top: 0, behavior: "auto" });
+    } else {
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.touchAction = previousBodyTouchAction;
+      document.body.style.overscrollBehavior = previousBodyOverscroll;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.documentElement.style.height = previousHtmlHeight;
+    }
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.touchAction = previousBodyTouchAction;
+      document.body.style.overscrollBehavior = previousBodyOverscroll;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.documentElement.style.height = previousHtmlHeight;
+    };
+  }, [done]);
+
   if (done) return null;
 
   return (

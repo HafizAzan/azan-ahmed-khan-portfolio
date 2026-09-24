@@ -134,17 +134,17 @@ export function CustomCursor() {
       <div
         ref={ringRef}
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-100 size-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/55 mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-100 size-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/80 bg-violet-500/5 shadow-[0_0_22px_rgba(124,58,237,0.45)] backdrop-blur-[1px]"
       />
       <div
         ref={cursorRef}
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-101 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-101 size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_18px_rgba(167,139,250,0.9)]"
       />
       <div
         ref={labelRef}
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-102 -translate-x-1/2 -translate-y-1/2 scale-70 rounded-full border border-violet-300/50 bg-violet-500/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white opacity-0 mix-blend-normal"
+        className="pointer-events-none fixed top-0 left-0 z-102 -translate-x-1/2 -translate-y-1/2 scale-70 rounded-full border border-violet-200/70 bg-violet-500/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white opacity-0 shadow-[0_0_18px_rgba(124,58,237,0.6)]"
       />
     </>
   );
