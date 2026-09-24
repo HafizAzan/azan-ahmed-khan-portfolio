@@ -1,11 +1,25 @@
 export const SITE = {
   name: "Azan Ahmed Khan",
-  title: "Full Stack Developer",
+  title: "Full Stack Developer & Software Engineer",
   email: "azanahmedkhan.dev@gmail.com",
-  url: "https://azanahmedkhan.dev",
+  url: "https://azan-ahmed-khan-portfolio-iota.vercel.app",
   description:
-    "Full stack developer building clean, fast, and user-focused web products.",
+    "Azan Ahmed Khan is a full stack developer creating scalable web applications, SaaS products, and digital experiences with Next.js, React, TypeScript, Node.js, and modern cloud architecture.",
   logo: "/logo.svg",
   logoPng: "/logo.png",
   ogImage: "/og-image.svg",
+  keywords: [
+    "Azan Ahmed Khan",
+    "Full Stack Developer",
+    "Software Engineer",
+    "Next.js Developer",
+    "React Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "Portfolio",
+    "Web App Developer",
+    "SaaS Developer",
+    "Frontend Developer",
+    "Backend Developer",
+  ],
 } as const;

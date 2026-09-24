@@ -183,7 +183,7 @@ export const PROJECTS: Project[] = [
       "Expo Image",
       "React Native Web",
     ],
-    liveUrl: "https://github.com/HafizAzan/CineVault",
+    liveUrl: "https://expo.dev/accounts/hafizazan123/projects/cinevault/builds/a124aa1c-6a34-491a-bd1c-76c99d39a9e8",
     githubUrl: "https://github.com/HafizAzan/CineVault",
     challenges:
       "The app needed to present a large movie and TV catalog smoothly on mobile while handling API states, image-heavy screens, nested media details, and consistent navigation across platforms.",
